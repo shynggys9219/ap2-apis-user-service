@@ -28,3 +28,8 @@ message CreateRequest {
   // password
   string password = 2;
 }
+
+message CreateResponse {
+  // id of a new entity
+  uint64 id = 1;
+}
