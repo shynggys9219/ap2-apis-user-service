@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user.service.frontend.client.v1;
 
-import "base/frontend/v1/client.proto"
+import "base/frontend/v1/client.proto";
 
 option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/service/frontend/client/v1;client";
 
@@ -20,7 +20,7 @@ service ClientService {
   // Create: create a client (used for registration)
   //------------------------
   rpc Create(CreateRequest) returns (CreateResponse);
-  rpc Get(GetRequest) returns (GetResponse)
+  rpc Get(GetRequest) returns (GetResponse);
 }
 
 message CreateRequest {
