@@ -20,6 +20,10 @@ service ClientService {
   // Create: create a client (used for registration)
   //------------------------
   rpc Create(CreateRequest) returns (CreateResponse);
+
+  //------------------------
+  // Get: get a client information
+  //------------------------
   rpc Get(GetRequest) returns (GetResponse);
 }
 
