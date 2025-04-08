@@ -9,4 +9,6 @@ message Client {
   uint64 id = 1;
   // client full name
   string name = 2;
+  // email
+  string email = 3;
 }

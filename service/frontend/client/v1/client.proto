@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user.service.frontend.client.v1;
 
-import "google/protobuf/timestamp.proto";
+import "base/frontend/v1/client.proto"
 
 option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/service/frontend/client/v1;client";
 
@@ -20,6 +20,7 @@ service ClientService {
   // Create: create a client (used for registration)
   //------------------------
   rpc Create(CreateRequest) returns (CreateResponse);
+  rpc Get(GetRequest) returns (GetResponse)
 }
 
 message CreateRequest {
@@ -32,4 +33,14 @@ message CreateRequest {
 message CreateResponse {
   // id of a new entity
   uint64 id = 1;
+}
+
+message GetRequest {
+  // id
+  string id = 1;
+}
+
+message GetResponse {
+  // client struct
+  base.frontend.v1.Client client = 1;
 }
