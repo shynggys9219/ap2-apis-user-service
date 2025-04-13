@@ -61,14 +61,18 @@ message GetResponse {
 
 // Update request
 message UpdateRequest {
+  // client id
+  uint64 id = 1;
   // name
-  string name = 1;
+  string name = 2;
   // email
-  string email = 2;
+  string email = 3;
   // phone
-  string phone = 3;
+  string phone = 4;
   // password
-  string password = 4;
+  string password = 5;
+  // old password
+  string old_password = 6;
 }
 
 message UpdateResponse {

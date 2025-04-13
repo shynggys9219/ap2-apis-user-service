@@ -17,4 +17,6 @@ message Client {
   string phone = 4;
   // created at == registration time for a client
   google.protobuf.Timestamp created_at = 5;
+  // check client status
+  bool is_deleted = 6;
 }
