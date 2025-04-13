@@ -4,7 +4,7 @@ package user.base.frontend.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/base/bo/v1;base";
+option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/base/frontend/v1;base";
 
 message Client {
   // client id
