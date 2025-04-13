@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package user.base.frontend.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/base/bo/v1;base";
 
 message Client {
@@ -11,4 +13,8 @@ message Client {
   string name = 2;
   // email
   string email = 3;
+  // phone
+  string phone = 4;
+  // created at == registration time for a client
+  google.protobuf.Timestamp created_at = 5;
 }

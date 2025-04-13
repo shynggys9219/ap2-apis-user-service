@@ -25,6 +25,16 @@ service ClientService {
   // Get: get a client information
   //------------------------
   rpc Get(GetRequest) returns (GetResponse);
+
+  //------------------------
+  // Update: update a client information
+  //------------------------
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+
+  //------------------------
+  // Update: update a client information
+  //------------------------
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
 }
 
 message CreateRequest {
@@ -41,10 +51,34 @@ message CreateResponse {
 
 message GetRequest {
   // id
-  string id = 1;
+  uint64 id = 1;
 }
 
 message GetResponse {
   // client struct
   base.frontend.v1.Client client = 1;
 }
+
+// Update request
+message UpdateRequest {
+  // name
+  string name = 1;
+  // email
+  string email = 2;
+  // phone
+  string phone = 3;
+  // password
+  string password = 4;
+}
+
+message UpdateResponse {
+  // client struct
+  base.frontend.v1.Client client = 1;
+}
+
+message DeleteRequest {
+  // id
+  uint64 id = 1;
+}
+
+message DeleteResponse {}
