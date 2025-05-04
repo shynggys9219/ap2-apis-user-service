@@ -1,24 +1,24 @@
 syntax = "proto3";
 
-package user.base.frontend.v1;
+package user.events.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/base/frontend/v1;base";
+option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/events/v1;events";
 
-message Client {
-  // client id
+message Customer {
+  // customer id
   uint64 id = 1;
-  // client full name
+  // customer full name
   string name = 2;
   // email
   string email = 3;
   // phone
   string phone = 4;
-  // created at == registration time for a client
+  // created at == registration time for a customer
   google.protobuf.Timestamp created_at = 5;
   // updated at
   google.protobuf.Timestamp updated_at = 6;
-  // check client status
+  // check customer status
   bool is_deleted = 7;
 }

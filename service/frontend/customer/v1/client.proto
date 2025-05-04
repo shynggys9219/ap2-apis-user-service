@@ -1,48 +1,48 @@
 syntax = "proto3";
 
-package user.service.frontend.client.v1;
+package user.service.frontend.customer.v1;
 
-import "base/frontend/v1/client.proto";
+import "base/frontend/v1/customer.proto";
 
-option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/service/frontend/client/v1;client";
+option go_package = "github.com/shynggys9219/ap2-apis-gen-user-service/service/frontend/customer/v1;customer";
 
 //------------------------
-// UserClient service:
+// Customer service:
 //------------------------
 // Format: proto
-// client: frontend (web, native apps)
+// customer: frontend (web, native apps)
 // server: user-service
 // Access:
 //   gRPC
 //---------------------------------------------------------------------------------
-service ClientService {
+service CustomerService {
   //------------------------
-  // Register: registers a client
+  // Register: registers a customer
   //------------------------
   rpc Register(RegisterRequest) returns (RegisterResponse);
 
   //------------------------
-  // Get: get a client information (user profile, only for authorized)
+  // Get: get a customer information (user profile, only for authorized)
   //------------------------
   rpc Get(GetRequest) returns (GetResponse);
 
   //------------------------
-  // Login: logins a client into the system
+  // Login: logins a customer into the system
   //------------------------
   rpc Login(LoginRequest) returns (LoginResponse);
 
   //------------------------
-  // RefreshToken: refreshes a client JWT token using giving refresh token
+  // RefreshToken: refreshes a customer JWT token using giving refresh token
   //------------------------
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
 
   //------------------------
-  // Update: update a client information
+  // Update: update a customer information
   //------------------------
   rpc Update(UpdateRequest) returns (UpdateResponse);
 
   //------------------------
-  // Update: update a client information
+  // Update: update a customer information
   //------------------------
   rpc Delete(DeleteRequest) returns (DeleteResponse);
 }
@@ -65,14 +65,14 @@ message GetRequest {
 }
 
 message GetResponse {
-  // client struct
-  base.frontend.v1.Client client = 1;
+  // customer struct
+  base.frontend.v1.Customer customer = 1;
 }
 
 message LoginRequest {
-  // client email
+  // customer email
   string email = 1;
-  // client password
+  // customer password
   string password = 2;
 }
 
@@ -97,7 +97,7 @@ message RefreshTokenResponse {
 
 // Update request
 message UpdateRequest {
-  // client id
+  // customer id
   uint64 id = 1;
   // name
   string name = 2;
@@ -112,8 +112,8 @@ message UpdateRequest {
 }
 
 message UpdateResponse {
-  // client struct
-  base.frontend.v1.Client client = 1;
+  // customer message
+  base.frontend.v1.Customer customer = 1;
 }
 
 message DeleteRequest {
